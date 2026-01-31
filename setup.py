@@ -30,7 +30,7 @@ print(get_requirements())
 setup(
     name="TRIP_PLANNER_AGENTICAI",
     version="0.0.1",
-    author="prakash saini",
+    author="prakash saini",  
     author_email="prakashmali6556@gmail.com",
     packages = find_packages(),
     install_requires=get_requirements()
