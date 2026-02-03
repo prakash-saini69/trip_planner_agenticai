@@ -3,7 +3,7 @@ name: Deploy to AWS ECR and Update ECS
 on:
   push:
     branches:
-      - main  # ⚠️ Verify: Is your branch 'main' or 'master'? Check 'git status'
+      - master
 
 jobs:
   build-and-push:
