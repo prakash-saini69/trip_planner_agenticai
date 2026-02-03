@@ -15,7 +15,8 @@ EXPOSE 8000
 EXPOSE 8501
 
 # 6. Create a startup script to run BOTH apps at once
-RUN echo '#!/bin/bash\nuvicorn main:app --host 0.0.0.0 --port 8000 & \nstreamlit run streamlit_app.py --server.port 8501 --server.address 0.0.0.0\nwait' > /app/start.sh
+# FIX: Added --server.enableCORS false and --server.enableXsrfProtection false
+RUN echo '#!/bin/bash\nuvicorn main:app --host 0.0.0.0 --port 8000 & \nstreamlit run streamlit_app.py --server.port 8501 --server.address 0.0.0.0 --server.enableCORS false --server.enableXsrfProtection false\nwait' > /app/start.sh
 
 # 7. Make the script executable
 RUN chmod +x /app/start.sh
